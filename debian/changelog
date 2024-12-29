@@ -1,0 +1,6 @@
+ghostty (1.0.0-1) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- Mike Kasberg <>  Sun, 29 Dec 2024 14:01:25 -0700
