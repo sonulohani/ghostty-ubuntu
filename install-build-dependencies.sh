@@ -5,7 +5,7 @@ ZIG_VERSION="0.13.0"
 # Build Tools
 sudo apt-get install -y build-essential debhelper devscripts pandoc
 
-curl "https://ziglang.org/download/$ZIG_VERSION/zig-linux-x86_64-$ZIG_VERSION.tar.xz" -o "zig-linux-x86_64-$ZIG_VERSION.tar.xz"
+curl -s "https://ziglang.org/download/$ZIG_VERSION/zig-linux-x86_64-$ZIG_VERSION.tar.xz" -o "zig-linux-x86_64-$ZIG_VERSION.tar.xz"
 sudo tar -xf "zig-linux-x86_64-$ZIG_VERSION.tar.xz" -C /opt
 rm "zig-linux-x86_64-$ZIG_VERSION.tar.xz"
 sudo ln -s "/opt/zig-linux-x86_64-$ZIG_VERSION/zig" /usr/local/bin/zig
