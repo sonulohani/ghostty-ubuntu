@@ -15,7 +15,7 @@ override_dh_auto_build:
 	zig build \
 	    --summary all \
 	    --prefix ./zig-out/usr \
-			--system /tmp/offline-cache/p \
+	    --system /tmp/offline-cache/p \
 	    -Doptimize=ReleaseFast \
 	    -Dcpu=baseline \
 	    -Dpie=true \
