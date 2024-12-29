@@ -11,3 +11,4 @@ tar -xzmf "ghostty-$VERSION.tar.gz"
 mv ghostty-source "ghostty-$VERSION"
 ln -s "ghostty-$VERSION.tar.gz" "ghostty_$VERSION.orig.tar.gz"
 
+cp -r debian "ghostty-$VERSION/debian"

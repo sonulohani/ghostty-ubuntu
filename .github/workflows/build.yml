@@ -1,0 +1,21 @@
+name: Build Ghostty
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-ghostty:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ghostty-ubuntu
+        uses: actions/checkout@v4
+
+      - name: Install Build Dependencies
+        run: ./install-build-dependencies.sh
+      
+      - name: Fetch Ghostty Source
+        run: ./fetch-upstream.sh
+      
+      - name: Build Package
+        run: debuild --prepend-path /usr/local/bin
+        
