@@ -1,6 +1,5 @@
-ghostty (1.0.0-1) UNRELEASED; urgency=low
+ghostty (1.0.0-0ubuntu1ppa1) UNRELEASED; urgency=low
 
-  * Initial release. Closes: #nnnn
-    <nnnn is the bug number of your ITP>
+  * Initial release.
 
- -- Mike Kasberg <>  Sun, 29 Dec 2024 14:01:25 -0700
+ -- Mike Kasberg <kasberg.mike@gmail.com>  Sun, 29 Dec 2024 14:01:25 -0700

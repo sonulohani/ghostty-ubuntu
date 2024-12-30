@@ -21,7 +21,7 @@ override_dh_auto_build:
 	    -Dcpu=baseline \
 	    -Dpie=true \
 	    -Demit-docs \
-			-fno-sys=freetype
+	    -fno-sys=freetype
 
 override_dh_auto_install:
 #	dh_auto_install -- prefix=/usr

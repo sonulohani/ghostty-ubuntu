@@ -23,4 +23,10 @@ jobs:
       - name: Build Package
         run: debuild --prepend-path /usr/local/bin
         working-directory: ghostty-${{ env.VERSION }}
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: ghostty_1.0.0-0ubuntu1ppa1_amd64.deb
         
