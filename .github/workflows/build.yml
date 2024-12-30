@@ -9,7 +9,9 @@ env:
 jobs:
   build-ghostty:
     name: Build Ghostty
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:24.10
     steps:
       - name: Checkout ghostty-ubuntu
         uses: actions/checkout@v4
