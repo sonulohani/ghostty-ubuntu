@@ -6,7 +6,7 @@ ZIG_VERSION="0.13.0"
 GHOSTTY_VERSION="1.0.0"
 
 # Install Build Tools
-apt-get update && sudo apt-get install -y build-essential debhelper devscripts pandoc libonig-dev libbz2-dev wget
+apt-get update && apt-get install -y build-essential debhelper devscripts pandoc libonig-dev libbz2-dev wget
 
 wget "https://github.com/jedisct1/minisign/releases/download/0.11/minisign-0.11-linux.tar.gz"
 tar -xzf minisign-0.11-linux.tar.gz
