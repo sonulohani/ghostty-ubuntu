@@ -11,7 +11,6 @@ export DH_VERBOSE = 1
 override_dh_auto_configure:
 	ZIG_GLOBAL_CACHE_DIR=/tmp/offline-cache ./nix/build-support/fetch-zig-cache.sh
 
-# We have to disable freetype below because bzip2 is bz2 on ubuntu
 override_dh_auto_build:
 	zig build \
 	    --summary all \
@@ -20,10 +19,9 @@ override_dh_auto_build:
 	    -Doptimize=ReleaseFast \
 	    -Dcpu=baseline \
 	    -Dpie=true \
-	    -Demit-docs \
-	    -fno-sys=freetype
+	    -Demit-docs
 
-override_dh_auto_install:
+#override_dh_auto_install:
 #	dh_auto_install -- prefix=/usr
 
 #override_dh_install:
