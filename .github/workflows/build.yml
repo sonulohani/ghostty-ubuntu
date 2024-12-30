@@ -8,6 +8,7 @@ env:
 
 jobs:
   build-ghostty:
+    name: Build Ghostty
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout ghostty-ubuntu
