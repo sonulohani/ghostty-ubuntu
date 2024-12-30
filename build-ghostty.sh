@@ -10,7 +10,7 @@ apt-get update && apt-get install -y build-essential debhelper devscripts pandoc
 
 wget "https://github.com/jedisct1/minisign/releases/download/0.11/minisign-0.11-linux.tar.gz"
 tar -xzf minisign-0.11-linux.tar.gz
-mv mv minisign-linux/x86_64/minisign /usr/local/bin
+mv minisign-linux/x86_64/minisign /usr/local/bin
 rm -r minisign-linux
 
 wget "https://ziglang.org/download/$ZIG_VERSION/zig-linux-x86_64-$ZIG_VERSION.tar.xz"
