@@ -2,10 +2,12 @@
 
 VERSION="1.0.0"
 
-curl -s "https://release.files.ghostty.org/$VERSION/ghostty-source.tar.gz" -o "ghostty-$VERSION.tar.gz"
-#curl "https://release.files.ghostty.org/VERSION/ghostty-source.tar.gz.minisig" -o "ghostty-$VERSION.tar.gz.minisig"
+wget "https://release.files.ghostty.org/$VERSION/ghostty-source.tar.gz"
+wget "https://release.files.ghostty.org/$VERSION/ghostty-source.tar.gz.minisig"
 
-#minisign -Vm "ghostty-$VERSION.tar.gz" -P RWQlAjJC23149WL2sEpT/l0QKy7hMIFhYdQOFy0Z7z7PbneUgvlsnYcV
+minisign -Vm "ghostty-source.tar.gz" -P RWQlAjJC23149WL2sEpT/l0QKy7hMIFhYdQOFy0Z7z7PbneUgvlsnYcV
+rm ghostty-source.tar.gz.minisig
+mv ghostty-source.tar.gz "ghostty-$VERSION.tar.gz"
 
 tar -xzmf "ghostty-$VERSION.tar.gz"
 mv ghostty-source "ghostty-$VERSION"
