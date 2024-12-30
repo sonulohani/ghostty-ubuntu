@@ -19,7 +19,7 @@ jobs:
     name: Build Ghostty
     strategy:
       matrix:
-        ubuntu_version: [22.04, 24.04, 24.10]
+        ubuntu_version: ["22.04", "24.04", "24.10"]
     runs-on: ubuntu-latest
     container:
       image: ubuntu:${{ matrix.ubuntu_version }}
