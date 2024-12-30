@@ -14,9 +14,12 @@ permissions:
 jobs:
   build-ghostty:
     name: Build Ghostty
+    strategy:
+      matrix:
+        ubuntu_version: [22.04, 24.04, 24.10]
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:24.10
+      image: ubuntu:${{ matrix.ubuntu_version }}
     steps:
       - name: Checkout ghostty-ubuntu
         uses: actions/checkout@v4
@@ -28,15 +31,6 @@ jobs:
         if: inputs.release_version == ''
         uses: actions/upload-artifact@v4
         with:
-          name: package
+          name: package-${{ matrix.ubuntu_version }}
           path: ghostty_*.deb
-      
-      - name: Create Release
-        if: inputs.release_version != ''
-        uses: softprops/action-gh-release@v2
-        with:
-          draft: true
-          files: ghostty_*.deb
-          tag_name: ${{ inputs.release_version }}
-          fail_on_unmatched_files: true
         
