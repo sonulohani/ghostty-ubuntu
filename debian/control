@@ -13,4 +13,4 @@ Package: ghostty
 Architecture: any
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
+Description: A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
