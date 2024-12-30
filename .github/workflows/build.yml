@@ -2,6 +2,11 @@ name: Build Ghostty
 
 on:
   workflow_dispatch:
+    inputs:
+      release_version:
+        description: If empty, rest with build artifact. If nonempty, release that version.
+        type: string
+        required: false
 
 jobs:
   build-ghostty:
@@ -17,8 +22,18 @@ jobs:
         run: ./build-ghostty.sh
       
       - name: Upload Artifact
+        if: inputs.release_version == ''
         uses: actions/upload-artifact@v4
         with:
           name: package
           path: ghostty_*.deb
+      
+      - name: Create Release
+        if: inputs.release_version != ''
+        run: |
+          if ! head -n 1 debian/changelog | grep -q '${{ inputs.release_version }}'; then
+            echo "::error::Release version does not match changelog."
+            exit 1
+          fi
+          gh release create "${{ inputs.release_version }}" -d ghostty_*.deb
         
