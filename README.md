@@ -17,6 +17,6 @@ To teach myself how to package this, I read the [Guide for Debian Maintainers](h
 
 ## Roadmap
 
-- [] Produce a .deb package on GitHub Releases
-- [] Set up a PPA for easier updates
-- [] Ghostty is available in official Ubuntu repos
+- [x] Produce a .deb package on GitHub Releases
+- [ ] Set up a PPA for easier updates
+- [ ] Ghostty is available in official Ubuntu repos
