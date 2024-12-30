@@ -6,25 +6,49 @@ Source: <https://github.com/ghostty-org/ghostty>
 Files: *
 Copyright: 2024 Mitchell Hashimoto
 License: MIT
- .
- MIT License
- .
- Copyright (c) 2024 Mitchell Hashimoto
- .
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- .
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
+
+Files: src/font/res/CodeNewRoman-Regular.otf
+Copyright: 2014 Sam Radian. All Rights Reserved.
+License: OFL-1.1
+
+Files: src/font/res/GeistMono-Regular.ttf
+Copyright: 2023 Vercel, in collaboration with basement.studio
+License: OFL-1.1
+
+Files: src/font/res/Inconsolata-Regular.ttf
+Copyright: 2006 The Inconsolata Project Authors
+License: OFL-1.1
+
+Files: src/font/res/JetBrainsMono*
+Copyright: 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+License: OFL-1.1
+
+Files: src/font/res/JuliaMono-Regular.ttf
+Copyright: 2020 - 2023, cormullion with Reserved Font Name JuliaMono.
+License: OFL-1.1
+
+Files: src/font/res/KawkabMono-Regular.ttf
+Copyright: 2015, Abdullah Arif (abdullah.a@gmail.com). Copyright 2010, 2012, 2014 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries. 
+License: OFL-1.1
+
+Files: src/font/res/Lilex-VF.ttf
+Copyright: 2019 The Lilex Project Authors (https://github.com/mishamyrt/Lilex)
+License: OFL-1.1
+
+Files: src/font/res/MonaspaceNeon-Regular.otf
+Copyright: 2023, GitHub https://github.com/githubnext/monaspace with Reserved Font Name "Monaspace", including subfamilies: "Argon", "Neon", "Xenon", "Radon", and "Krypton"
+License: OFL-1.1
+
+Files: src/font/res/Noto*
+Copyright: 2013 Google LLC
+License: OFL-1.1
+
+Files: src/font/res/CozetteVector.ttf
+Copyright: 2020, Slavfox
+License: MIT
+
+Files: src/font/res/TerminusTTF-Regular.ttf
+Copyright:
+  2010-2020 Dimitar Toshkov Zhekov with Reserved Font Name "Terminus Font"
+  2011-2023 Tilman Blumenbach with Reserved Font Name "Terminus (TTF)"
+License: OFL-1.1
