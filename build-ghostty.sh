@@ -4,9 +4,14 @@ ZIG_VERSION="0.13.0"
 GHOSTTY_VERSION="1.0.0"
 
 # Install Build Tools
-apt-get update && sudo apt-get install -y build-essential debhelper devscripts pandoc libonig-dev libbz2-dev
+apt-get update && sudo apt-get install -y build-essential debhelper devscripts pandoc libonig-dev libbz2-dev wget
 
-curl -s "https://ziglang.org/download/$ZIG_VERSION/zig-linux-x86_64-$ZIG_VERSION.tar.xz" -o "zig-linux-x86_64-$ZIG_VERSION.tar.xz"
+wget "https://github.com/jedisct1/minisign/releases/download/0.11/minisign-0.11-linux.tar.gz"
+tar -xzf minisign-0.11-linux.tar.gz
+mv mv minisign-linux/x86_64/minisign /usr/local/bin
+rm -r minisign-linux
+
+wget "https://ziglang.org/download/$ZIG_VERSION/zig-linux-x86_64-$ZIG_VERSION.tar.xz"
 tar -xf "zig-linux-x86_64-$ZIG_VERSION.tar.xz" -C /opt
 rm "zig-linux-x86_64-$ZIG_VERSION.tar.xz"
 ln -s "/opt/zig-linux-x86_64-$ZIG_VERSION/zig" /usr/local/bin/zig
