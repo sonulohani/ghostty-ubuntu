@@ -7,7 +7,7 @@ This is an unofficial community project to provide a package that's easy to inst
 ## How To Install Ghostty on Ubuntu
 
 - Download the most recent `.deb` package from the [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page.
-- Install the downloaded `.deb` package by running `sudo dpkg -i ghostty-*.deb`.
+- Install the downloaded `.deb` package by running `sudo dpkg -i ghostty_*.deb`.
 
 ## Contributing
 
