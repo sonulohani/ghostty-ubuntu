@@ -5,6 +5,9 @@ set -e
 ZIG_VERSION="0.13.0"
 GHOSTTY_VERSION="1.0.0"
 
+export DEBEMAIL="kasberg.mike@gmail.com"
+export DEBFULLNAME="Mike Kasberg"
+
 # Install Build Tools
 apt-get update && apt-get install -y build-essential debhelper devscripts pandoc libonig-dev libbz2-dev wget
 

@@ -36,5 +36,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package-${{ matrix.ubuntu_version }}
-          path: ghostty_*.deb
+          retention-days: 7
+          path: |
+            ghostty_*.deb
+            ghostty_*.changes
         
