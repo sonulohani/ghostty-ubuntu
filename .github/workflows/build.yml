@@ -8,6 +8,9 @@ on:
         type: string
         required: false
 
+permissions:
+  contents: write
+
 jobs:
   build-ghostty:
     name: Build Ghostty
@@ -30,10 +33,10 @@ jobs:
       
       - name: Create Release
         if: inputs.release_version != ''
-        run: |
-          if ! head -n 1 debian/changelog | grep -q '${{ inputs.release_version }}'; then
-            echo "::error::Release version does not match changelog."
-            exit 1
-          fi
-          gh release create "${{ inputs.release_version }}" -d ghostty_*.deb
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          files: ghostty_*.deb
+          tag_name: ${{ inputs.release_version }}
+          fail_on_unmatched_files: true
         
