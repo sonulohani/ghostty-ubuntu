@@ -19,7 +19,8 @@ override_dh_auto_build:
 	    -Doptimize=ReleaseFast \
 	    -Dcpu=baseline \
 	    -Dpie=true \
-	    -Demit-docs
+	    -Demit-docs \
+			-Dfreetype=false
 
 override_dh_auto_install:
 #	dh_auto_install -- prefix=/usr
