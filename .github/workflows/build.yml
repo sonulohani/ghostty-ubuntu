@@ -3,9 +3,6 @@ name: Build Ghostty
 on:
   workflow_dispatch:
 
-env:
-  VERSION: 1.0.0
-
 jobs:
   build-ghostty:
     name: Build Ghostty
@@ -15,20 +12,13 @@ jobs:
     steps:
       - name: Checkout ghostty-ubuntu
         uses: actions/checkout@v4
-
-      - name: Install Build Dependencies
-        run: ./install-build-dependencies.sh
       
-      - name: Fetch Ghostty Source
-        run: ./fetch-upstream.sh
-      
-      - name: Build Package
-        run: debuild --prepend-path /usr/local/bin
-        working-directory: ghostty-${{ env.VERSION }}
+      - name: Build Ghostty
+        run: ./build-ghostty.sh
       
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: ghostty_1.0.0-0ubuntu1ppa1_amd64.deb
+          path: ghostty_*.deb
         
