@@ -20,7 +20,7 @@ jobs:
     name: Build Ghostty
     strategy:
       matrix:
-        ubuntu_version: ["22.04", "24.04", "24.10"]
+        ubuntu_version: ["24.04", "24.10"]
     runs-on: ubuntu-latest
     container:
       image: ubuntu:${{ matrix.ubuntu_version }}
@@ -28,6 +28,15 @@ jobs:
       - name: Checkout ghostty-ubuntu
         uses: actions/checkout@v4
       
+      - name: Set Release Distribution
+        run: |
+          if [ "${{ matrix.ubuntu_version }}" == "24.04" ]; then
+            UBUNTU_DIST="noble"
+          else
+            UBUNTU_DIST="oracular"
+          fi
+          sed -i "s/UNRELEASED/$UBUNTU_DIST/" debian/changelog
+
       - name: Build Ghostty
         run: ./build-ghostty.sh
       
