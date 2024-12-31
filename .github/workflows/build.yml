@@ -38,6 +38,5 @@ jobs:
           name: package-${{ matrix.ubuntu_version }}
           retention-days: 7
           path: |
-            ghostty_*.deb
-            ghostty_*.changes
+            ghostty_*.*
         
