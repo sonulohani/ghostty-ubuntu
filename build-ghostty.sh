@@ -7,6 +7,8 @@ GHOSTTY_VERSION="1.0.0"
 
 export DEBEMAIL="kasberg.mike@gmail.com"
 export DEBFULLNAME="Mike Kasberg"
+export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-i -I -us -uc"
+export DEBUILD_LINTIAN_OPTS="-i -I --show-overrides"
 
 # Install Build Tools
 apt-get update && apt-get install -y build-essential debhelper devscripts pandoc libonig-dev libbz2-dev wget
