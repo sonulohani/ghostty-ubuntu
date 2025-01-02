@@ -15,18 +15,11 @@ install on Ubuntu. If you're looking for the Ghostty source code, see
 
 ## Contributing
 
-I have little exprience building and maintaining Ubuntu packages, but as a
-software engineer who spends a lot of time in Ubuntu I have something close to
-the right skill set for it. I want to have an easy-to-install Ghostty package
-for Ubuntu, so I'm doing what I can to make it happen. (Ghostty [relies on the
+I want to have an easy-to-install Ghostty package for Ubuntu, so I'm doing what
+I can to make it happen. (Ghostty [relies on the
 community](https://ghostty.org/docs/install/binary) to produce non-macOS
 packages.) I'm sure the scripts I have so far can be improved, so please open an
 issue or PR if you notice any problems!
-
-To teach myself how to package this, I read the [Guide for Debian
-Maintainers](https://www.debian.org/doc/manuals/debmake-doc/index.en.html) and
-also skimmed the older [Debian New Maintainers'
-Guide](https://www.debian.org/doc/manuals/maint-guide/index.en.html).
 
 ## Roadmap
 
