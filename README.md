@@ -9,9 +9,11 @@ install on Ubuntu. If you're looking for the Ghostty source code, see
 
 ## How To Install Ghostty on Ubuntu
 
-- Download the most recent `.deb` package for your Ubuntu version from the
-  [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page.
-- Install the downloaded `.deb` package by running `sudo dpkg -i ghostty_*.deb`.
+1. Download the most recent .deb package for your Ubuntu version from the
+   [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page.
+2. Install the downloaded .deb package by running `sudo dpkg -i
+   ghostty_*.deb`. (There's only one .deb to install, using the exact filename is
+   also fine.)
 
 ## Contributing
 
