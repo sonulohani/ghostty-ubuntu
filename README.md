@@ -1,4 +1,7 @@
-# :ghost: Ghostty Ubuntu
+
+![Ghostty Logo](ghostty-logo.png)
+
+# Ghostty Ubuntu
 
 This repository contains build scripts to produce an _unofficial_ Ubuntu package
 (.deb) for [Ghostty](https://ghostty.org).
@@ -7,19 +10,39 @@ This is an unofficial community project to provide a package that's easy to
 install on Ubuntu. If you're looking for the Ghostty source code, see
 [ghostty-org/ghostty](https://github.com/ghostty-org/ghostty).
 
-## How To Install Ghostty on Ubuntu
+## Install/Update
+
+:zap: Just paste this into your terminal and run it!
+
+```sh
+source /etc/os-release
+curl -L -O "https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa1/ghostty_1.0.1-0.ppa1_amd64_${VERSION_ID}.deb"
+sudo dpkg -i ghostty_1.0.1-0.ppa1_amd64_${VERSION_ID}.deb
+rm ghostty_1.0.1-0.ppa1_amd64_${VERSION_ID}.deb
+```
 
 > [!WARNING]
 > A recent GTK is required for Ghostty to work with Nvidia (GL) drivers under
-> x11. **Ubuntu 22.04 LTS has GTK 4.6 which is not new enough.** (See the
+> X11. **Ubuntu 22.04 LTS has GTK 4.6 which is not new enough.** Ubuntu 23.10+ should be fine. (See the
 > [note](https://ghostty.org/docs/install/build#debian-and-ubuntu) in the
 > Ghostty docs.)
 
-1. Download the most recent .deb package for your Ubuntu version from the
-   [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page.
-2. Install the downloaded .deb package by running `sudo dpkg -i
-   ghostty_*.deb`. (There's only one .deb to install, using the exact filename is
-   also fine.)
+## Manual Installation
+
+If you prefer to download and install the package manually instead of running the short script above, here are instructions.
+
+1. Download the .deb package for your Ubuntu version. (Also available on our [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page.)
+   - **Ubuntu 24.10 Oracular:** [ghostty_1.0.1-0.ppa1_amd64_24.10.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa1/ghostty_1.0.1-0.ppa1_amd64_24.10.deb)
+   - **Ubuntu 24.04 LTS Noble:** [ghostty_1.0.1-0.ppa1_amd64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa1/ghostty_1.0.1-0.ppa1_amd64_24.04.deb)
+   - **Ubuntu 22.04 LTS Jammy:** [ghostty_1.0.1-0.ppa1_amd64_22.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa1/ghostty_1.0.1-0.ppa1_amd64_22.04.deb)
+2. Install the downloaded .deb package.
+
+   ```sh
+   sudo dpkg -i <filename>.deb
+   ```
+## Updating
+
+To update to a new version, just follow any of the installation methods above. There's no need to uninstall the old version; it will be updated correctly.
 
 ## Contributing
 
