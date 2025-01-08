@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       release_version:
-        description: The git tag to release.
+        description: The version to release.
         type: string
         required: true
 
@@ -58,7 +58,7 @@ jobs:
 
       - name: Validate Release Version
         run: |
-          if ! head -n 1 debian/changelog | grep -q '${{ inputs.release_version }}'; then
+          if ! head -n 1 changelog.Debian | grep -q '${{ inputs.release_version }}'; then
             echo "::error::Release version does not match changelog."
             exit 1
           else
