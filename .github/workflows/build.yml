@@ -58,12 +58,13 @@ jobs:
 
       - name: Validate Release Version
         run: |
-          if ! head -n 1 changelog.Debian | grep -q '${{ inputs.release_version }}'; then
-            echo "::error::Release version does not match changelog."
-            exit 1
-          else
+          if ls *${{ inputs.release_version }}* 1> /dev/null 2>&1; then
+            # Version is correct.
             # The git tag shouldn't have `~`
             echo "RELEASE_TAG=$(echo '${{ inputs.release_version }}' | sed 's/~/-/g')" >> $GITHUB_ENV
+          else
+            echo "::error::Release version does not match filenames."
+            exit 1
           fi
 
       - name: Publish Release Draft
