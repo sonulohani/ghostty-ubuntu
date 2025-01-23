@@ -42,9 +42,14 @@ rm "$GHOSTTY_DEB_FILE"
 If you prefer to download and install the package manually instead of running the short script above, here are instructions.
 
 1. Download the .deb package for your Ubuntu version. (Also available on our [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page.)
-   - **Ubuntu 24.10 Oracular:** [ghostty_1.0.1-0.ppa3_amd64_24.10.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa3/ghostty_1.0.1-0.ppa3_amd64_24.10.deb)
-   - **Ubuntu 24.04 LTS Noble:** [ghostty_1.0.1-0.ppa3_amd64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa3/ghostty_1.0.1-0.ppa3_amd64_24.04.deb)
-   - **Ubuntu 22.04 LTS Jammy:** [ghostty_1.0.1-0.ppa3_amd64_22.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa3/ghostty_1.0.1-0.ppa3_amd64_22.04.deb)
+   - **Ubuntu 24.10 Oracular:** [ghostty_1.0.1-0.ppa4_amd64_24.10.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_amd64_24.10.deb)
+   - **Ubuntu 24.04 LTS Noble:** [ghostty_1.0.1-0.ppa4_amd64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_amd64_24.04.deb)
+   - **Ubuntu 22.04 LTS Jammy:** [ghostty_1.0.1-0.ppa4_amd64_22.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_amd64_22.04.deb)
+   - **Debian Bookworm:** [ghostty_1.0.1-0.ppa4_amd64_bookworm.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_amd64_bookworm.deb)
+   - **Arm64 Ubuntu 24.10 Oracular:** [ghostty_1.0.1-0.ppa4_amd64_24.10.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_arm64_24.10.deb)
+   - **Arm64 Ubuntu 24.04 LTS Noble:** [ghostty_1.0.1-0.ppa4_amd64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_arm64_24.04.deb)
+   - **Arm64 Ubuntu 22.04 LTS Jammy:** [ghostty_1.0.1-0.ppa4_amd64_22.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_arm64_22.04.deb)
+   - **Arm64 Debian Bookworm:** [ghostty_1.0.1-0.ppa4_amd64_bookworm.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.0.1-0-ppa4/ghostty_1.0.1-0.ppa4_arm64_bookworm.deb)
 2. Install the downloaded .deb package.
 
    ```sh
