@@ -8,8 +8,8 @@
 
 # Ghostty Ubuntu
 
-This repository contains build scripts to produce an _unofficial_ Ubuntu package
-(.deb) for [Ghostty](https://ghostty.org).
+This repository contains build scripts to produce an _unofficial_ Ubuntu/Debian
+package (.deb) for [Ghostty](https://ghostty.org).
 
 This is an unofficial community project to provide a package that's easy to
 install on Ubuntu. If you're looking for the Ghostty source code, see
