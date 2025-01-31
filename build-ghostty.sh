@@ -2,7 +2,7 @@
 
 set -e
 
-GHOSTTY_VERSION="1.0.1"
+GHOSTTY_VERSION="1.1.0"
 
 DISTRO_VERSION=$(lsb_release -sr)
 DISTRO=$(lsb_release -sc)
