@@ -30,18 +30,12 @@ jobs:
         arch:
           - name: amd64
             runner: ubuntu-24.04
-          - name: arm64
-            runner: ubuntu-24.04-arm
         builds:
           # Build errors with Ghostty 1.1. Can put this back when we fix the errors.
           # - distro: "ubuntu"
           #   version: "22.04"
           - distro: "ubuntu"
             version: "24.04"
-          - distro: "ubuntu"
-            version: "24.10"
-          - distro: "debian"
-            version: "bookworm"
     runs-on: ${{ matrix.arch.runner }}
     steps:
         # See the docs: https://github.com/docker/build-push-action
