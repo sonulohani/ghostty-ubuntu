@@ -2,7 +2,7 @@
 
 set -e
 
-GHOSTTY_VERSION="1.1.0"
+GHOSTTY_VERSION="source"
 
 DISTRO_VERSION=$(lsb_release -sr)
 DISTRO=$(lsb_release -sc)
@@ -11,11 +11,7 @@ DISTRO=$(lsb_release -sc)
 FULL_VERSION="$GHOSTTY_VERSION-0~ppa1"
 
 # Fetch Ghostty Source
-wget -q "https://release.files.ghostty.org/$GHOSTTY_VERSION/ghostty-$GHOSTTY_VERSION.tar.gz"
-wget -q "https://release.files.ghostty.org/$GHOSTTY_VERSION/ghostty-$GHOSTTY_VERSION.tar.gz.minisig"
-
-minisign -Vm "ghostty-$GHOSTTY_VERSION.tar.gz" -P RWQlAjJC23149WL2sEpT/l0QKy7hMIFhYdQOFy0Z7z7PbneUgvlsnYcV
-rm ghostty-$GHOSTTY_VERSION.tar.gz.minisig
+wget -q "https://github.com/ghostty-org/ghostty/releases/download/tip/ghostty-$GHOSTTY_VERSION.tar.gz"
 
 tar -xzmf "ghostty-$GHOSTTY_VERSION.tar.gz"
 
@@ -35,8 +31,7 @@ zig build \
   -Doptimize=ReleaseFast \
   -Dcpu=baseline \
   -Dpie=true \
-  -Demit-docs \
-  -Dversion-string=$GHOSTTY_VERSION
+  -Demit-docs
 
 UNAME_M="$(uname -m)"
 if [ "${UNAME_M}" = "x86_64" ]; then
