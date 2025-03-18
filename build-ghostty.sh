@@ -2,7 +2,7 @@
 
 set -e
 
-GHOSTTY_VERSION="source"
+GHOSTTY_VERSION="tip"
 
 DISTRO_VERSION=$(lsb_release -sr)
 DISTRO=$(lsb_release -sc)
@@ -11,9 +11,9 @@ DISTRO=$(lsb_release -sc)
 FULL_VERSION="$GHOSTTY_VERSION-0~ppa1"
 
 # Fetch Ghostty Source
-wget -q "https://github.com/ghostty-org/ghostty/releases/download/tip/ghostty-$GHOSTTY_VERSION.tar.gz"
+wget -q "https://github.com/ghostty-org/ghostty/archive/refs/tags/tip.tar.gz"
 
-tar -xzmf "ghostty-$GHOSTTY_VERSION.tar.gz"
+tar -xzmf "tip.tar.gz"
 
 cd "ghostty-$GHOSTTY_VERSION"
 
