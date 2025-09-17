@@ -2,7 +2,38 @@
 
 set -e
 
-GHOSTTY_VERSION="1.1.3"
+DEFAULT_RELEASE="1.2.0"
+TARGET_RELEASE="${1:-$DEFAULT_RELEASE}"
+
+case "$TARGET_RELEASE" in
+  tip)
+    TARBALL="ghostty-source.tar.gz"
+    SOURCE_URL="https://github.com/ghostty-org/ghostty/releases/download/tip/$TARBALL"
+    MINISIG_URL="$SOURCE_URL.minisig"
+    ;;
+  *)
+    TARBALL="ghostty-$TARGET_RELEASE.tar.gz"
+    SOURCE_URL="https://release.files.ghostty.org/$TARGET_RELEASE/$TARBALL"
+    MINISIG_URL="$SOURCE_URL.minisig"
+    ;;
+esac
+
+PACKAGE_REVISION="${PACKAGE_REVISION:-0~ppa1}"
+
+echo "Fetch Ghostty Source ($TARGET_RELEASE)"
+wget -q "$SOURCE_URL"
+wget -q "$MINISIG_URL"
+
+minisign -Vm "$TARBALL" -P RWQlAjJC23149WL2sEpT/l0QKy7hMIFhYdQOFy0Z7z7PbneUgvlsnYcV
+rm "$(basename "$MINISIG_URL")"
+
+SOURCE_DIR=$(tar -tzf "$TARBALL" | head -1 | cut -d/ -f1)
+tar -xzmf "$TARBALL"
+rm "$TARBALL"
+
+cd "$SOURCE_DIR"
+
+GHOSTTY_VERSION="${SOURCE_DIR#ghostty-}"
 
 # Use 25.04 format for ubuntu versions, "bookwork" format for Debian
 if [ $(lsb_release -si) = "Debian" ]; then
@@ -12,19 +43,8 @@ else
 fi
 DISTRO=$(lsb_release -sc)
 
-#FULL_VERSION="$GHOSTTY_VERSION-0~${DISTRO}1"
-FULL_VERSION="$GHOSTTY_VERSION-0~ppa2"
-
-echo "Fetch Ghostty Source"
-wget -q "https://release.files.ghostty.org/$GHOSTTY_VERSION/ghostty-$GHOSTTY_VERSION.tar.gz"
-wget -q "https://release.files.ghostty.org/$GHOSTTY_VERSION/ghostty-$GHOSTTY_VERSION.tar.gz.minisig"
-
-minisign -Vm "ghostty-$GHOSTTY_VERSION.tar.gz" -P RWQlAjJC23149WL2sEpT/l0QKy7hMIFhYdQOFy0Z7z7PbneUgvlsnYcV
-rm ghostty-$GHOSTTY_VERSION.tar.gz.minisig
-
-tar -xzmf "ghostty-$GHOSTTY_VERSION.tar.gz"
-
-cd "ghostty-$GHOSTTY_VERSION"
+FULL_VERSION="$GHOSTTY_VERSION-$PACKAGE_REVISION"
+OUTPUT_VERSION=$(printf '%s' "$FULL_VERSION" | sed 's/~/./g')
 
 # On Ubuntu it's libbz2, not libbzip2
 sed -i 's/linkSystemLibrary2("bzip2", dynamic_link_opts)/linkSystemLibrary2("bz2", dynamic_link_opts)/' src/build/SharedDeps.zig
@@ -62,12 +82,14 @@ fi
 # Debian control files
 cp -r ../DEBIAN/ ./zig-out/DEBIAN/
 sed -i "s/amd64/$DEBIAN_ARCH/g" ./zig-out/DEBIAN/control
+sed -i "s/^Version: .*/Version: $FULL_VERSION/" ./zig-out/DEBIAN/control
 
 # Changelog and copyright
 mkdir -p ./zig-out/usr/share/doc/ghostty/
 cp ../copyright ./zig-out/usr/share/doc/ghostty/
 cp ../changelog.Debian ./zig-out/usr/share/doc/ghostty/
 sed -i "s/DIST/$DISTRO/" zig-out/usr/share/doc/ghostty/changelog.Debian
+sed -i "0,/ghostty (/s/ghostty ([^)]*) DIST/ghostty ($FULL_VERSION) DIST/" zig-out/usr/share/doc/ghostty/changelog.Debian
 gzip -n -9 zig-out/usr/share/doc/ghostty/changelog.Debian
 
 # Compress manpages
@@ -86,4 +108,4 @@ mv zig-out/usr/share/zsh/site-functions zig-out/usr/share/zsh/vendor-completions
 
 echo "Build Debian Package"
 dpkg-deb --build zig-out "ghostty_${FULL_VERSION}_${DEBIAN_ARCH}.deb"
-mv "ghostty_${FULL_VERSION}_${DEBIAN_ARCH}.deb" "../ghostty_${FULL_VERSION}_${DEBIAN_ARCH}_${DISTRO_VERSION}.deb"
+mv "ghostty_${FULL_VERSION}_${DEBIAN_ARCH}.deb" "../ghostty_${OUTPUT_VERSION}_${DEBIAN_ARCH}_${DISTRO_VERSION}.deb"
