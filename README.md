@@ -33,17 +33,9 @@ install on Ubuntu. If you're looking for the Ghostty source code, see
 
 If you prefer to download and install the package manually instead of running the short script above, here are instructions.
 
-1. Download the .deb package for your Ubuntu version. (Also available on our [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page.)
-   - **Ubuntu 25.04 Plucky:** [ghostty_1.2.0-0.ppa1_amd64_25.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_amd64_25.04.deb)
-   - **Ubuntu 24.10 Oracular:** [ghostty_1.2.0-0.ppa1_amd64_24.10.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_amd64_24.10.deb)
-   - **Ubuntu 24.04 LTS Noble:** [ghostty_1.2.0-0.ppa1_amd64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_amd64_24.04.deb)
-   - **Ubuntu 22.04 LTS Jammy:** [ghostty_1.2.0-0.ppa1_amd64_22.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_amd64_22.04.deb)
-   - **Debian Bookworm:** [ghostty_1.2.0-0.ppa1_amd64_bookworm.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_amd64_bookworm.deb)
-   - **Arm64 Ubuntu 25.04 Plucky:** [ghostty_1.2.0-0.ppa1_arm64_25.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_arm64_25.04.deb)
-   - **Arm64 Ubuntu 24.10 Oracular:** [ghostty_1.2.0-0.ppa1_arm64_24.10.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_arm64_24.10.deb)
-   - **Arm64 Ubuntu 24.04 LTS Noble:** [ghostty_1.2.0-0.ppa1_arm64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_arm64_24.04.deb)
-   - **Arm64 Ubuntu 22.04 LTS Jammy:** [ghostty_1.2.0-0.ppa1_arm64_22.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_arm64_22.04.deb)
-   - **Arm64 Debian Bookworm:** [ghostty_1.2.0-0.ppa1_arm64_bookworm.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_arm64_bookworm.deb)
+1. Download the .deb package for Ubuntu 24.04 LTS (also available on our [Releases](https://github.com/mkasberg/ghostty-ubuntu/releases) page).
+   - **Ubuntu 24.04 LTS Noble (amd64):** [ghostty_1.2.0-0.ppa1_amd64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_amd64_24.04.deb)
+   - **Ubuntu 24.04 LTS Noble (arm64):** [ghostty_1.2.0-0.ppa1_arm64_24.04.deb](https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa1/ghostty_1.2.0-0.ppa1_arm64_24.04.deb)
 2. Install the downloaded .deb package.
 
    ```sh
@@ -69,7 +61,7 @@ environment. The details of how the process works are in
 docker image
 
 ```bash
-docker build -t ghostty-ubuntu:latest --build-arg DISTRO=ubuntu --build-arg DISTRO_VERSION=24.10 .
+docker build -t ghostty-ubuntu:latest --build-arg DISTRO=ubuntu --build-arg DISTRO_VERSION=24.04 .
 ```
 
 And then use that build environment to produce a binary .deb package
